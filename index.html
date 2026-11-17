@@ -1,0 +1,307 @@
+DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090612" />
+  <title>VORTEXSENSI • ZRYONXXXZ VIP</title>
+  <style>
+    :root {
+      --bg: #08060e;
+      --panel: rgba(20, 15, 31, .92);
+      --panel-2: #171024;
+      --purple: #9b35ff;
+      --purple-2: #6d18db;
+      --pink: #d45bff;
+      --text: #f7f1ff;
+      --muted: #a99cb9;
+      --line: rgba(190, 117, 255, .18);
+      --good: #65f0be;
+      --shadow: 0 18px 55px rgba(0,0,0,.48), 0 0 35px rgba(139,43,255,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(119, 27, 213, .22), transparent 38%),
+        radial-gradient(circle at 100% 45%, rgba(98, 21, 155, .11), transparent 28%),
+        linear-gradient(180deg, #090611 0%, #07050b 58%, #0b0611 100%);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .16;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 34px 34px; mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .shell { width: min(100% - 28px, 760px); margin: 0 auto; padding: 22px 0 46px; position: relative; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:30px; }
+    .brand-mini { display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:2px; font-weight:900; }
+    .brand-mark { width:38px; height:38px; display:grid; place-items:center; border-radius:12px; color:white; background:linear-gradient(145deg,#b64aff,#6414cf); box-shadow:0 0 22px rgba(157,48,255,.42); font-size:20px; }
+    .top-pill { border:1px solid var(--line); border-radius:999px; padding:8px 12px; color:#d9b5ff; background:rgba(34,19,49,.55); font-size:10px; letter-spacing:1.4px; font-weight:800; }
+    .hero { text-align:center; padding: 8px 6px 27px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; color:#d9aaff; border:1px solid rgba(177,92,255,.25); background:rgba(118,33,176,.12); border-radius:999px; padding:7px 12px; font-size:10px; font-weight:900; letter-spacing:2px; }
+    .eyebrow i { width:6px; height:6px; border-radius:50%; background:#c66aff; box-shadow:0 0 12px #bd55ff; }
+    h1 { margin:18px 0 8px; font-size:clamp(35px,8vw,61px); line-height:.98; letter-spacing:1px; font-weight:1000; }
+    h1 span { color:transparent; background:linear-gradient(100deg,#7c20e7 8%,#d06bff 53%,#fff 96%); background-clip:text; -webkit-background-clip:text; text-shadow:0 0 36px rgba(155,53,255,.16); }
+    .hero p { color:var(--muted); font-size:13px; line-height:1.65; margin:13px auto 0; max-width:480px; }
+    .creator { margin-top:15px; color:#7e718f; font-size:10px; letter-spacing:2.3px; font-weight:800; }
+    .creator strong { color:#c68aff; }
+    .panel { background:linear-gradient(155deg,rgba(26,19,39,.96),rgba(13,10,20,.98)); border:1px solid rgba(197,122,255,.22); border-radius:25px; padding:21px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .panel::before { content:""; position:absolute; top:0; left:12%; right:12%; height:1px; background:linear-gradient(90deg,transparent,#c66aff,transparent); }
+    .section-head { display:flex; align-items:center; gap:10px; margin:2px 0 14px; color:#d9b0ff; font-size:11px; letter-spacing:1.55px; font-weight:950; text-transform:uppercase; }
+    .section-head .num { display:grid; place-items:center; width:24px; height:24px; border-radius:8px; background:rgba(149,50,255,.16); border:1px solid rgba(181,104,255,.35); color:#d29aff; font-size:11px; }
+    .os-switch { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:6px; border:1px solid rgba(255,255,255,.07); background:#0c0912; border-radius:15px; }
+    .os-btn { border:0; border-radius:11px; padding:14px 10px; background:transparent; color:#756b80; font-weight:900; letter-spacing:.8px; font-size:12px; transition:.2s; }
+    .os-btn.active { color:#fff; background:linear-gradient(110deg,#7f19db,#a62cff); box-shadow:0 8px 24px rgba(137,30,230,.28), inset 0 1px rgba(255,255,255,.16); }
+    .os-btn span { font-size:17px; margin-right:7px; vertical-align:-2px; }
+    .field { margin-top:22px; }
+    .field label { display:block; margin:0 0 9px; color:#d5c5e3; font-size:11px; letter-spacing:1.1px; font-weight:900; text-transform:uppercase; }
+    .input-wrap { display:flex; align-items:center; gap:10px; padding:0 14px; height:56px; background:#0b0810; border:1px solid rgba(255,255,255,.09); border-radius:14px; transition:.2s; }
+    .input-wrap:focus-within { border-color:#a94cff; box-shadow:0 0 0 3px rgba(157,53,255,.12); }
+    .input-icon { color:#a957f5; font-size:19px; }
+    .input-wrap input { min-width:0; width:100%; color:#fff; outline:0; border:0; background:transparent; font-size:14px; }
+    .input-wrap input::placeholder { color:#655a70; }
+    .sub-fields { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:12px; }
+    .choice { background:#0d0914; border:1px solid rgba(255,255,255,.07); border-radius:13px; padding:11px 12px; }
+    .choice label { display:block; color:#9d8eaa; font-size:9px; font-weight:900; letter-spacing:1.1px; margin-bottom:8px; }
+    .choice select { width:100%; border:0; outline:0; color:#eee4f7; background:transparent; font-size:12px; }
+    .choice select option { background:#171020; }
+    .preset-title { margin:25px 0 11px; color:#d5c5e3; font-size:11px; letter-spacing:1.1px; font-weight:900; text-transform:uppercase; }
+    .preset-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+    .preset { min-height:105px; text-align:left; border:1px solid rgba(183,115,255,.17); border-radius:15px; padding:13px 11px; color:#fff; background:linear-gradient(155deg,#241333,#130d1c); transition:.2s; }
+    .preset:hover { transform:translateY(-2px); border-color:rgba(199,128,255,.55); }
+    .preset.active { border-color:#b45bff; background:linear-gradient(155deg,#7620be,#3b1262); box-shadow:0 0 22px rgba(148,44,241,.2), inset 0 1px rgba(255,255,255,.12); }
+    .preset .p-icon { display:block; font-size:19px; margin-bottom:9px; }
+    .preset strong { display:block; font-size:11px; letter-spacing:.6px; }
+    .preset small { display:block; margin-top:5px; color:#c1a9d4; font-size:9px; }
+    .generate { width:100%; border:0; border-radius:14px; margin-top:18px; padding:17px 15px; color:#fff; font-size:13px; font-weight:1000; letter-spacing:1.2px; background:linear-gradient(100deg,#7918d4,#a52cff 58%,#8121dc); box-shadow:0 10px 26px rgba(141,35,225,.29),inset 0 1px rgba(255,255,255,.2); transition:.2s; }
+    .generate:hover { filter:brightness(1.12); transform:translateY(-1px); }
+    .generate:active { transform:scale(.99); }
+    .status { min-height:19px; margin:10px 0 0; text-align:center; color:#9e8eac; font-size:10px; }
+    .result { display:none; margin-top:20px; animation:rise .35s ease; }
+    .result.show { display:block; }
+    @keyframes rise { from {opacity:0; transform:translateY(9px)} to {opacity:1; transform:translateY(0)} }
+    .result-top { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:13px; }
+    .result-top h2 { margin:0; font-size:18px; letter-spacing:.2px; }
+    .result-top p { margin:5px 0 0; color:var(--muted); font-size:10px; }
+    .vip-tag { padding:6px 9px; border-radius:8px; color:#e6c8ff; background:rgba(147,50,235,.17); border:1px solid rgba(185,113,255,.28); font-size:9px; font-weight:1000; letter-spacing:1.2px; }
+    .stats { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+    .stat { padding:13px; border:1px solid rgba(185,119,255,.14); border-radius:13px; background:linear-gradient(145deg,rgba(36,24,50,.85),rgba(16,12,23,.95)); }
+    .stat-head { display:flex; align-items:center; justify-content:space-between; gap:8px; color:#b7a7c5; font-size:10px; font-weight:800; }
+    .stat-value { margin-top:7px; font-size:27px; font-weight:1000; line-height:1; color:#fff; text-shadow:0 0 18px rgba(183,83,255,.25); font-variant-numeric:tabular-nums; }
+    .bar { height:4px; margin-top:11px; border-radius:8px; background:#30233b; overflow:hidden; }
+    .bar i { display:block; height:100%; border-radius:8px; background:linear-gradient(90deg,#7c22d3,#d36bff); }
+    .result-actions { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:13px; }
+    .action { border:1px solid rgba(192,133,255,.25); border-radius:11px; padding:12px 9px; color:#e9d6fa; background:rgba(92,37,134,.18); font-size:10px; font-weight:900; letter-spacing:.7px; }
+    .action.primary { background:linear-gradient(100deg,#5e18a7,#8422ce); border-color:transparent; color:#fff; }
+    .tip { margin-top:13px; padding:13px; border-radius:12px; border:1px solid rgba(101,240,190,.15); background:rgba(41,141,105,.07); color:#b9d9ce; font-size:10px; line-height:1.6; }
+    .tip strong { color:var(--good); }
+    .footer { text-align:center; color:#6f627b; font-size:9px; line-height:1.7; margin:18px 8px 0; }
+    .footer b { color:#a47ac5; letter-spacing:1.4px; }
+    .toast { position:fixed; left:50%; bottom:22px; transform:translate(-50%,18px); opacity:0; pointer-events:none; z-index:5; background:#21132e; border:1px solid rgba(196,127,255,.4); color:#fff; border-radius:999px; padding:11px 16px; font-size:11px; box-shadow:0 8px 28px rgba(0,0,0,.4); transition:.25s; white-space:nowrap; }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width:430px) {
+      .shell { width:min(100% - 20px,760px); padding-top:15px; }
+      .panel { padding:16px; border-radius:21px; }
+      .preset { min-height:98px; padding:11px 9px; }
+      .preset strong { font-size:10px; }
+      .stats { gap:8px; }
+      .stat { padding:11px; }
+      .stat-value { font-size:25px; }
+    }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; animation:none !important; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mini"><div class="brand-mark">ϟ</div><div>VORTEX<span style="color:#bd72ff">SENSI</span></div></div>
+      <div class="top-pill">✦ VIP • ZRYONXXXZ</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><i></i> SISTEMA DE CONFIGURAÇÃO PRO</div>
+      <h1><span>VORTEX</span><br>SENSI</h1>
+      <p>Encontre uma configuração inicial de sensibilidade feita para o seu dispositivo. Ajuste, teste e evolua no seu próprio ritmo.</p>
+      <div class="creator">CO-CRIADOR VIP <strong>ZRYONXXXZ</strong></div>
+    </section>
+
+    <section class="panel" aria-label="Gerador de sensibilidade">
+      <div class="section-head"><span class="num">01</span> Sistema operacional</div>
+      <div class="os-switch" role="group" aria-label="Sistema operacional">
+        <button class="os-btn active" type="button" data-os="Android" aria-pressed="true"><span>◈</span> ANDROID</button>
+        <button class="os-btn" type="button" data-os="iOS" aria-pressed="false"><span>●</span> iOS</button>
+      </div>
+
+      <div class="field">
+        <div class="section-head"><span class="num">02</span> Modelo do dispositivo</div>
+        <div class="input-wrap">
+          <span class="input-icon">⌕</span>
+          <input id="device" type="text" maxlength="48" autocomplete="off" placeholder="Ex.: Samsung Galaxy A54, iPhone 13..." aria-label="Modelo do dispositivo" />
+        </div>
+        <div class="sub-fields">
+          <div class="choice">
+            <label for="ram">MEMÓRIA RAM</label>
+            <select id="ram"><option value="3">Até 3 GB</option><option value="4" selected>4 GB</option><option value="6">6 GB</option><option value="8">8 GB</option><option value="12">12 GB ou mais</option></select>
+          </div>
+          <div class="choice">
+            <label for="style">ESTILO DE JOGO</label>
+            <select id="style"><option value="balanced" selected>Equilibrado</option><option value="precision">Precisão</option><option value="agile">Rápido</option></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="preset-title">03 · Escolha o nível da sensibilidade</div>
+      <div class="preset-grid" role="group" aria-label="Nível de sensibilidade">
+        <button class="preset" type="button" data-level="low" aria-pressed="false"><span class="p-icon">⌁</span><strong>BAIXA</strong><small>Controle • até 150</small></button>
+        <button class="preset active" type="button" data-level="medium" aria-pressed="true"><span class="p-icon">◎</span><strong>MÉDIA</strong><small>Híbrida • até 180</small></button>
+        <button class="preset" type="button" data-level="high" aria-pressed="false"><span class="p-icon">ϟ</span><strong>ALTA</strong><small>Agilidade • até 200</small></button>
+      </div>
+
+      <button class="generate" id="generate" type="button">✦ &nbsp; GERAR MINHA SENSI VIP</button>
+      <p class="status" id="status" aria-live="polite">Informe o modelo do aparelho e gere sua configuração.</p>
+
+      <section class="result" id="result" aria-live="polite">
+        <div class="result-top">
+          <div><h2>Configuração gerada</h2><p id="result-device">Seu perfil VORTEXSENSI</p></div>
+          <span class="vip-tag">✦ VIP</span>
+        </div>
+        <div class="stats" id="stats"></div>
+        <div class="result-actions">
+          <button class="action primary" id="copy" type="button">▣ &nbsp; COPIAR SENSI</button>
+          <button class="action" id="again" type="button">↻ &nbsp; NOVA VARIAÇÃO</button>
+        </div>
+        <div class="tip"><strong>DICA VORTEX:</strong> use os valores como ponto de partida. Teste no treinamento e mude apenas um ajuste por vez até encontrar o controle mais confortável.</div>
+      </section>
+    </section>
+
+    <p class="footer"><b>VORTEXSENSI × ZRYONXXXZ</b><br>PROJETO VIP • ASSINATURA DO CRIADOR<br>Ferramenta independente de sugestões. Não altera o jogo nem mede o aparelho automaticamente. Os resultados são recomendações, não garantia de desempenho.</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite">Configuração copiada!</div>
+
+  <script>
+    (() => {
+      const state = { os: 'Android', level: 'medium', last: null, variation: 0 };
+      const limits = { low: 150, medium: 180, high: 200 };
+      const levelNames = { low: 'Baixa • Controle', medium: 'Média • Híbrida', high: 'Alta • Agilidade' };
+      const fields = [
+        { key: 'Geral', weight: 0.94 },
+        { key: 'Ponto vermelho', weight: 0.81 },
+        { key: 'Mira 2x', weight: 0.75 },
+        { key: 'Mira 4x', weight: 0.66 },
+        { key: 'Mira AWM', weight: 0.43 },
+        { key: 'Olhadinha', weight: 0.58 }
+      ];
+      const $ = (id) => document.getElementById(id);
+
+      document.querySelectorAll('[data-os]').forEach(button => {
+        button.addEventListener('click', () => {
+          state.os = button.dataset.os;
+          document.querySelectorAll('[data-os]').forEach(item => {
+            const active = item === button;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-pressed', String(active));
+          });
+        });
+      });
+      document.querySelectorAll('[data-level]').forEach(button => {
+        button.addEventListener('click', () => {
+          state.level = button.dataset.level;
+          document.querySelectorAll('[data-level]').forEach(item => {
+            const active = item === button;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-pressed', String(active));
+          });
+        });
+      });
+
+      // Hash determinístico: aparelhos diferentes recebem uma base diferente.
+      function hashText(text) {
+        let hash = 2166136261;
+        for (let i = 0; i < text.length; i++) {
+          hash ^= text.charCodeAt(i);
+          hash = Math.imul(hash, 16777619);
+        }
+        return hash >>> 0;
+      }
+      function seededRandom(seed) {
+        let value = seed >>> 0;
+        return () => {
+          value += 0x6D2B79F5;
+          let t = value;
+          t = Math.imul(t ^ (t >>> 15), t | 1);
+          t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+      function clamp(value, min, max) { return Math.max(min, Math.min(max, value)); }
+      function createConfig() {
+        const device = $('device').value.trim();
+        if (!device) {
+          $('status').textContent = 'Digite o modelo do seu aparelho para continuar.';
+          $('device').focus();
+          $('result').classList.remove('show');
+          return;
+        }
+        const ram = Number($('ram').value);
+        const style = $('style').value;
+        const cap = limits[state.level];
+        const signature = `${state.os}|${device.toLowerCase()}|${ram}|${style}|${state.level}|${state.variation}`;
+        const random = seededRandom(hashText(signature));
+        const osFactor = state.os === 'iOS' ? 1.025 : 1;
+        const ramFactor = ram <= 3 ? .91 : ram === 4 ? .96 : ram >= 12 ? 1.025 : 1;
+        const styleFactor = style === 'precision' ? .91 : style === 'agile' ? 1.045 : 1;
+        const factors = { low: .76, medium: .86, high: .93 };
+        const sensitivity = {};
+
+        fields.forEach((field, index) => {
+          const randomOffset = (random() - .5) * 0.14;
+          const positionFactor = factors[state.level] * field.weight * osFactor * ramFactor * styleFactor;
+          const variationFactor = 1 + randomOffset;
+          let value = Math.round(cap * positionFactor * variationFactor);
+          // Mira de longo alcance permanece mais controlada.
+          if (field.key === 'Mira AWM') value = Math.round(value * (style === 'precision' ? 1.04 : .94));
+          sensitivity[field.key] = clamp(value, 0, cap);
+        });
+
+        state.last = { device, os: state.os, ram, style, level: state.level, cap, sensitivity };
+        renderResult();
+      }
+      function renderResult() {
+        const config = state.last;
+        $('result-device').textContent = `${config.device} • ${config.os} • ${levelNames[config.level]}`;
+        $('stats').innerHTML = fields.map(field => {
+          const value = config.sensitivity[field.key];
+          const width = Math.round((value / config.cap) * 100);
+          return `<article class="stat"><div class="stat-head"><span>${field.key}</span><span>${width}%</span></div><div class="stat-value">${value}</div><div class="bar"><i style="width:${width}%"></i></div></article>`;
+        }).join('');
+        $('status').textContent = 'Configuração pronta • ajuste no treinamento conforme sua preferência.';
+        $('result').classList.add('show');
+        $('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      function configText() {
+        const c = state.last;
+        if (!c) return '';
+        return [
+          '⚡ VORTEXSENSI VIP — ZRYONXXXZ',
+          `Dispositivo: ${c.device} (${c.os})`,
+          `Perfil: ${levelNames[c.level]} | Limite: ${c.cap}`,
+          `RAM selecionada: ${c.ram} GB`,
+          `Estilo: ${c.style === 'precision' ? 'Precisão' : c.style === 'agile' ? 'Rápido' : 'Equilibrado'}`,
+          '',
+          ...fields.map(field => `${field.key}: ${c.sensitivity[field.key]}`),
+          '',
+          'Sugestão inicial: teste no treinamento e ajuste um valor por vez.'
+        ].join('\n');
+      }
+      async function copyConfig() {
+        const text = configText();
+        if (!text) return;
+        try {
+          
